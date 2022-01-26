@@ -12,7 +12,7 @@ db //show current database
 db.users.insertOne({name:"john"})
 db.users.find()
 // documnet > collectoins > database
-db.users.insertOne({name:"sally",age:19,address:{strret:"103 fake street},hobbies:{"running"});
+db.users.insertOne({name:"sally",age:19,address:{street:"103 fake street},hobbies:{"running"});
 db.users.find();
 db.suers.insertMany({name:"jill"},{name:"mike"});
 db.users.find().limit(2)
@@ -58,6 +58,5 @@ db.users.updateOne({_id:ObjectId("123456789")},{$push:{hobbies:"swimming"}});
 db.users.updateOne({_id:ObjectId("123456789")},{$pull:{hobbies:"swimming"}});// remove from array
 db.users.updateMany({address:{$exists:true}},{$unset:{address:""}});
 db.users.replaceOne({age:30},{name:"john"}) // delete whole object?
-
 db.users.deleteOne({name:"john"})
 db.users.deleteMany({age:{$exists:false}})
