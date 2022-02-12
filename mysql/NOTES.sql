@@ -1,4 +1,8 @@
-select where from 
+mysql -u root
+source \home\user\Desktop\test.sql;
+source \work\allhelloworld\mysql\schemas.sql
+
+ commands : select where from 
 not case sensative
 best pracatice to uppcase keywords
 select * from table;
