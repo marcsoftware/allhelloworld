@@ -15,3 +15,13 @@ CREATE TABLE albums (
   PRIMARY KEY (id),
   FOREIGN KEY (band_id) REFERENCES bands(id)
 );
+
+
+
+CREATE TABLE songs (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  length float,
+  album_id INT NOT NULL,
+  PRIMARY KEY (id)
+);

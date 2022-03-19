@@ -1,6 +1,10 @@
 mysql -u root
-source \home\user\Desktop\test.sql;
+
 source \work\allhelloworld\mysql\schemas.sql
+source \work\allhelloworld\mysql\data.sql
+
+source C:\Users\marc\work\allhelloworld\mysql\schema.sql
+source C:\Users\marc\work\allhelloworld\mysql\data.sql
 
  commands : select where from 
 not case sensative
@@ -10,6 +14,9 @@ select * from table;
 
 create database test;
 click regresh to make UI render
+show databases;
+SHOW SCHEMAS;
+show tables;
 drop database test;
 
 create database record_company;
@@ -82,7 +89,7 @@ where name like '%er%'or band_id=2;
 
 
 select * from albums
-where name release_year = 1984 and band_id=1;
+where  release_year = 1984 and band_id=1;
 
 select * from albums
 where relsear_year between 2000 and 2018;
@@ -92,8 +99,7 @@ where release_year is null;
 
 delete from albums where id = 5;
 
-select * from bands
-join albums on bands.id=albums.band_id;
+select * from bands join albums on bands.id=albums.band_id;
 //select when equal
 
 join
@@ -109,10 +115,7 @@ group by band_id; // squish matching band_id in to one
 excersies in video
 https://github.com/WebDevSimplified/Learn-SQL
 
-select b.name as band_name, count(a.id) as num_albums
-from bands as b 
-left join albums as a on b.id=a.band_id
-group by b.id;
+select b.name as band_name, count(a.id) as num_albums from bands as b  left join albums as a on b.id=a.band_id group by b.id;
 
 select b.name as band_name, count(a.id) as num_albums
 from bands as b 
