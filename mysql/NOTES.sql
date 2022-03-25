@@ -1,8 +1,7 @@
 mysql -u root
 
-source \work\allhelloworld\mysql\schemas.sql
-source \work\allhelloworld\mysql\data.sql
 
+source C:\Users\marc\work\allhelloworld\mysql\both.sql
 source C:\Users\marc\work\allhelloworld\mysql\schema.sql
 source C:\Users\marc\work\allhelloworld\mysql\data.sql
 
@@ -115,12 +114,14 @@ group by band_id; // squish matching band_id in to one
 excersies in video
 https://github.com/WebDevSimplified/Learn-SQL
 
-select b.name as band_name, count(a.id) as num_albums from bands as b  left join albums as a on b.id=a.band_id group by b.id;
+select b.name as band_name, count(a.id) 
+as num_albums from bands as b  left join albums as a on b.id=a.band_id group by b.id;
 
-select b.name as band_name, count(a.id) as num_albums
-from bands as b 
-left join albums as a on b.id=a.band_id
-where num_albums =1 // wont work since where happends after group by
+
+ // wont work since where happends after group by. FIX WITH HAVING
+select b.name as band_name, count(a.id) as num_albums from bands as b
+  left join albums as a on b.id=a.band_id
+where num_albums =1
 group by b.id;
 
 
